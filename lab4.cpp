@@ -32,8 +32,25 @@ public:
     CoupleTable operator[](int n) { return table[n]; }
 };
 
+template < typename T >
+struct S
+{
+    void print() { puts("Szablon ogólny"); }
+};
+
+template <>
+struct S< double >
+{
+    void print() { puts("Specjalizacja dla double"); }
+};
+
 int main()
 {
+    S< char >   i;
+    S< double > d;
+    i.print();
+    d.print();
+    /*
     Couple< double > p1(1, 2);
     Couple< double > p2(3.2, 5.4);
     Couple< double > p3(1.1, 2.3);
@@ -50,4 +67,5 @@ int main()
     cout << tab.get_el(1).sum() << endl;
     cout << tab.get_el(2).sum() << endl;
     cout << tab.get_el(3).sum() << endl;
+    */
 }
