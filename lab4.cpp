@@ -48,12 +48,22 @@ struct S< double >
     void print() { puts("Specjalizacja dla double"); }
 };
 
+template < typename T >
+T product(T tab[], int n)
+{
+    T prod = 0;
+    for (int i = 0; i < n; i++) {
+        prod = prod * tab[i];
+    }
+}
+
 int main()
 {
     S< char >   i;
     S< double > d;
     i.print();
     d.print();
+    
     /*
     Couple< double > p1(1, 2);
     Couple< double > p2(3.2, 5.4);
