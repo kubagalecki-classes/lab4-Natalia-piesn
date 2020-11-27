@@ -33,6 +33,10 @@ public:
 };
 
 template < typename T >
+class CoupleTable< T, 0 >
+{};
+
+template < typename T >
 struct S
 {
     void print() { puts("Szablon ogólny"); }
